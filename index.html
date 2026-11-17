@@ -207,6 +207,45 @@
                 </div> <div class="gallery" id="animals-grid">
                     <div class="art-card" onclick="openImg('Animal1.png')"><div class="art-img-wrap"><img src="Animal1.png" alt="Animal 1"></div></div>
                     <!-- Карточки с Animal1 по Animal16 -->
+                </div>                    <div class="art-card" onclick="openImg('Animal2.png')"><div class="art-img-wrap"><img src="Animal2.png" alt="Animal 2"></div></div>
+                    <div class="art-card" onclick="openImg('Animal3.png')"><div class="art-img-wrap"><img src="Animal3.png" alt="Animal 3"></div></div>
+                    <div class="art-card" onclick="openImg('Animal4.png')"><div class="art-img-wrap"><img src="Animal4.png" alt="Animal 4"></div></div>
+                    <div class="art-card" onclick="openImg('Animal5.png')"><div class="art-img-wrap"><img src="Animal5.png" alt="Animal 5"></div></div>
+                    <div class="art-card" onclick="openImg('Animal6.png')"><div class="art-img-wrap"><img src="Animal6.png" alt="Animal 6"></div></div>
+                    <div class="art-card" onclick="openImg('Animal7.png')"><div class="art-img-wrap"><img src="Animal7.png" alt="Animal 7"></div></div>
+                    <div class="art-card" onclick="openImg('Animal8.png')"><div class="art-img-wrap"><img src="Animal8.png" alt="Animal 8"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Animal9.png')"><div class="art-img-wrap"><img src="Animal9.png" alt="Animal 9"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Animal10.png')"><div class="art-img-wrap"><img src="Animal10.png" alt="Animal 10"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Animal11.png')"><div class="art-img-wrap"><img src="Animal11.png" alt="Animal 11"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Animal12.png')"><div class="art-img-wrap"><img src="Animal12.png" alt="Animal 12"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Animal13.png')"><div class="art-img-wrap"><img src="Animal13.png" alt="Animal 13"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Animal14.png')"><div class="art-img-wrap"><img src="Animal14.png" alt="Animal 14"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Animal15.png')"><div class="art-img-wrap"><img src="Animal15.png" alt="Animal 15"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Animal16.png')"><div class="art-img-wrap"><img src="Animal16.png" alt="Animal 16"></div></div>
                 </div>
+                <div class="toggle-wrap"><button class="btn-toggle" onclick="toggleGallery('animals-grid', this, 'Показать ещё (8)', 'Свернуть')">Показать ещё (8)</button></div>
+            </section>
+            <section id="services">
+                <div class="section-header"><h2>Что можно заказать</h2><p>Работаю по понятному брифингу с согласованием эскиза на старте.</p></div>
+                <div class="services-grid">
+                    <div class="service-card"><h3>Нуар-портрет по фото</h3><p>Атмосферный стилизованный портрет человека в духе классического нуара и тёмного кино.</p><div class="service-tag">Индивидуальная стилизация</div></div>
+                    <div class="service-card"><h3>Портрет питомца</h3><p>Выразительный ч/б или цветной портрет собаки, кота или любого другого животного по фото.</p><div class="service-tag">Файл для печати + для соцсетей</div></div>
+                    <div class="service-card"><h3>Графика для брендов</h3><p>Одиночные ч/б иллюстрации для этикеток, мерча, книг и постеров.</p><div class="service-tag">Коммерческая лицензия</div></div>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="cta-box"><h2>Обсудим вашу идею?</h2><p>Напишите мне в Telegram — расскажите о задаче, и я сориентирую по срокам и стоимости.</p><a href="https://t.me" target="_blank" class="btn">Написать в Telegram @Alionaluk</a></div>
+            </section>
+        </main>
+        <footer><div>&copy; 2026 Алёна Луковская (Kitsune).</div><div class="social-links"><a href="https://t.me" target="_blank">Telegram</a><a href="https://pin.it" target="_blank">Pinterest</a></div></footer>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')"><img id="lightbox-img" src="" alt="Работа"></div>
+    <script>
+        function toggleGallery(id, btn, s, h) { const g = document.getElementById(id); g.classList.toggle('expanded'); btn.textContent = g.classList.contains('expanded') ? h : s; }
+        function openImg(src) { document.getElementById('lightbox-img').src = src; document.getElementById('lightbox').classList.add('active'); }
+    </script>
+</body>
+</html>
+
                 <!-- Кнопка разворачивания галереи, секции услуг, контактов, футер, лайтбокс и скрипты -->
 
