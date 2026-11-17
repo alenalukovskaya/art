@@ -10,7 +10,214 @@
             --bg-card: #16181d;
             --text-main: #f0f0f2;
             --text-muted: #9a9da6;
+            --accent: #d94e34;<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алёна Луковская (Kitsune) — Нуар-иллюстрация и Анималистика</title>
+    <style>
+        :root {
+            --bg-main: #0d0e11;
+            --bg-card: #16181d;
+            --text-main: #f0f0f2;
+            --text-muted: #9a9da6;
             --accent: #d94e34;
+            --accent-hover: #f05d41;
+            --border: #262932;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+        header {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        .logo span { color: var(--accent); }
+        nav a { margin-left: 28px; font-size: 0.95rem; color: var(--text-muted); transition: color 0.2s; }
+        nav a:hover { color: var(--text-main); }
+        .hero { padding: 80px 0 60px; max-width: 760px; }
+        .tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        h1 { font-size: clamp(2.1rem, 5vw, 3.5rem); line-height: 1.15; margin-bottom: 24px; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 36px; max-width: 620px; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
+        .btn-outline { background-color: transparent; border: 1px solid var(--border); margin-left: 14px; color: var(--text-main); }
+        .btn-outline:hover { background-color: var(--bg-card); border-color: var(--text-muted); }
+        section { padding: 64px 0; border-top: 1px solid var(--border); }
+        .section-header { margin-bottom: 36px; }
+        .section-header h2 { font-size: 2rem; margin-bottom: 10px; }
+        .section-header p { color: var(--text-muted); max-width: 600px; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+            gap: 20px;
+        }
+        .art-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: zoom-in;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+        .art-card:hover { transform: translateY(-4px); border-color: #4b5163; }
+        .art-card.hidden-item { display: none; }
+        .gallery.expanded .art-card.hidden-item { display: block; }
+        .art-img-wrap {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background-color: #16181d;
+            overflow: hidden;
+        }
+        .art-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .art-card:hover .art-img-wrap img { transform: scale(1.03); }
+        .toggle-wrap { text-align: center; margin-top: 32px; }
+        .btn-toggle {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+        .btn-toggle:hover { border-color: var(--accent); background-color: #1d2027; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .service-card { background-color: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+        .service-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+        .service-tag { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+        .cta-box {
+            background: linear-gradient(145deg, #16181d 0%, #1c1618 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px 36px;
+            text-align: center;
+        }
+        .cta-box h2 { font-size: 2rem; margin-bottom: 14px; }
+        .cta-box p { color: var(--text-muted); max-width: 540px; margin: 0 auto 30px; }
+        footer {
+            padding: 36px 0;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .social-links a { margin-left: 20px; color: var(--text-main); }
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            cursor: zoom-out;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img { max-width: 95%; max-height: 92vh; border-radius: 8px; }
+        @media (max-width: 640px) {
+            nav { display: none; }
+            .btn-outline { margin-left: 0; margin-top: 12px; }
+            .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Aliona Lukouskaya <span>/ Kitsune</span></div>
+            <nav>
+                <a href="#noir">Нуар</a>
+                <a href="#animals">Анималистика</a>
+                <a href="#services">Услуги</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+        </header>
+        <main>
+            <div class="hero">
+                <div class="tag">Графика и Нуар &bull; Художник-анималист</div>
+                <h1>Атмосфера нуара и характерные портреты животных</h1>
+                <p>Создаю мрачные нуар-портреты, выразительную чёрно-белую анималистику и иллюстрации для обложек, этикеток, мерча и частных коллекций.</p>
+                <div>
+                    <a href="https://t.me" target="_blank" class="btn">Заказать в Telegram (@Alionaluk)</a>
+                    <a href="#noir" class="btn btn-outline">Смотреть работы</a>
+                </div>
+            </div>
+
+            <!-- Секция 1: Нуар-портреты (8 видны сразу, 2 скрыты) -->
+            <section id="noir">
+                <div class="section-header">
+                    <h2>Нуар-портреты и тёмная графика</h2>
+                    <p>Контрастная светотень, кинематографичное настроение и мистические образы для обложек, постеров и личных историй.</p>
+                </div>
+                <div class="gallery" id="noir-grid">
+                    <div class="art-card" onclick="openImg('Noir1.jpg')"><div class="art-img-wrap"><img src="Noir1.jpg" alt="Noir 1"></div></div>
+                    <div class="art-card" onclick="openImg('Noir2.jpg')"><div class="art-img-wrap"><img src="Noir2.jpg" alt="Noir 2"></div></div>
+                    <div class="art-card" onclick="openImg('Noir3.jpg')"><div class="art-img-wrap"><img src="Noir3.jpg" alt="Noir 3"></div></div>
+                    <div class="art-card" onclick="openImg('Noir4.jpg')"><div class="art-img-wrap"><img src="Noir4.jpg" alt="Noir 4"></div></div>
+                    <div class="art-card" onclick="openImg('Noir5.jpg')"><div class="art-img-wrap"><img src="Noir5.jpg" alt="Noir 5"></div></div>
+                    <div class="art-card" onclick="openImg('Noir6.jpg')"><div class="art-img-wrap"><img src="Noir6.jpg" alt="Noir 6"></div></div>
+                    <div class="art-card" onclick="openImg('Noir7.jpg')"><div class="art-img-wrap"><img src="Noir7.jpg" alt="Noir 7"></div></div>
+                    <div class="art-card" onclick="openImg('Noir8.jpg')"><div class="art-img-wrap"><img src="Noir8.jpg" alt="Noir 8"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Noir9.jpg')"><div class="art-img-wrap"><img src="Noir9.jpg" alt="Noir 9"></div></div>
+                    <div class="art-card hidden-item" onclick="openImg('Noir10.jpg')"><div class="art-img-wrap"><img src="Noir10.jpg" alt="Noir 10"></div></div>
+                </div>
+                <div class="toggle-wrap">
+                    <button class="btn-toggle" onclick="toggleGallery('noir-grid', this, 'Показать ещё (2)', 'Свернуть')">Показать ещё (2)</button>
+                </div>
+            </section>
+
+            <!-- Секция 2: Анималистика (8 видны сразу, 8 скрыты) -->
+            <section id="animals">
+                <div class="section-header">
+                    <h2>Анималистика</h2>
+                    <p>Портреты домашних питомцев и диких зверей с акцентом на взгляд, характер и графичную подачу.</p>
+                </div>
+
             --accent-hover: #f05d41;
             --border: #262932;
         }
